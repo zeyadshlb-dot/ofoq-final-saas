@@ -421,7 +421,7 @@ export default function AssignmentsPage() {
                         href={
                           sub.answer_image.startsWith("http")
                             ? sub.answer_image
-                            : `http://localhost:3000/${sub.answer_image}`
+                            : `https://api.ofoq.site/${sub.answer_image}`
                         }
                         target="_blank"
                         rel="noreferrer"
@@ -685,7 +685,7 @@ export default function AssignmentsPage() {
                         src={
                           gradingSubmission.answer_image.startsWith("http")
                             ? gradingSubmission.answer_image
-                            : `http://localhost:3000/${gradingSubmission.answer_image}`
+                            : `https://api.ofoq.site/${gradingSubmission.answer_image}`
                         }
                         className="w-full h-auto max-h-[400px] object-contain bg-gray-900"
                         alt="Answer attachment"
@@ -694,7 +694,7 @@ export default function AssignmentsPage() {
                         href={
                           gradingSubmission.answer_image.startsWith("http")
                             ? gradingSubmission.answer_image
-                            : `http://localhost:3000/${gradingSubmission.answer_image}`
+                            : `https://api.ofoq.site/${gradingSubmission.answer_image}`
                         }
                         target="_blank"
                         rel="noreferrer"
