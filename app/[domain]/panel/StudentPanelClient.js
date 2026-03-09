@@ -1896,7 +1896,7 @@ export default function StudentPanelClient({ theme, domain }) {
                                       "http",
                                     )
                                       ? activeAssignment.my_answer_image
-                                      : `http://localhost:3000/${activeAssignment.my_answer_image}`
+                                      : `https://api.ofoq.site/${activeAssignment.my_answer_image}`
                                   }
                                   className="w-full h-auto object-cover"
                                   alt="My submission"
@@ -1908,7 +1908,7 @@ export default function StudentPanelClient({ theme, domain }) {
                                         "http",
                                       )
                                         ? activeAssignment.my_answer_image
-                                        : `http://localhost:3000/${activeAssignment.my_answer_image}`
+                                        : `https://api.ofoq.site/${activeAssignment.my_answer_image}`
                                     }
                                     target="_blank"
                                     rel="noreferrer"
