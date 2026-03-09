@@ -7,35 +7,40 @@ const nextConfig = {
     "winston",
   ],
   transpilePackages: ["recharts", "es-toolkit", "@reduxjs/toolkit"],
-  experimental: {
-    proxyTimeout: 3_600_000, // 1 hour for large video uploads
-    middlewareClientMaxBodySize: "10gb",
+
+  // مهم جداً عشان الـ Cookies والـ Subdomains تشتغل صح في الـ Production
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "api.ofoq.site",
+        pathname: "/public/storage/**",
+      },
+    ],
   },
+
+  experimental: {
+    proxyTimeout: 3_600_000,
+  },
+
   async rewrites() {
-    return {
-      // beforeFiles rewrites are checked before pages/public files
-      beforeFiles: [],
-      // afterFiles rewrites are checked after pages/public files but before dynamic routes
-      afterFiles: [
-        {
-          // Only proxy to Go backend for paths that are NOT /api/whatsapp or /api/fawaterk
-          source: "/api/:path((?!whatsapp|fawaterk).*)",
-          destination: "http://127.0.0.1:3000/api/:path*",
-        },
-        {
-          // Proxy storage files (PDFs, images, etc.) to Go backend
-          source: "/public/storage/:path*",
-          destination: "http://127.0.0.1:3000/public/storage/:path*",
-        },
-        {
-          // Proxy WebSockets for live video
-          source: "/ws/live/:path*",
-          destination: "http://127.0.0.1:3000/ws/live/:path*",
-        },
-      ],
-      // fallback rewrites are checked after both pages/public files and dynamic routes
-      fallback: [],
-    };
+    return [
+      {
+        // الباك إند (Go)
+        source: "/api/:path((?!whatsapp|fawaterk).*)",
+        // استخدم localhost لو الباك إند على نفس السيرفر لأداء أسرع
+        destination: "http://127.0.0.1:3000/api/:path*",
+      },
+      {
+        source: "/public/storage/:path*",
+        destination: "http://127.0.0.1:3000/public/storage/:path*",
+      },
+      {
+        // الـ WebSockets محتاجة معاملة خاصة، بس جرب دي الأول مع Nginx
+        source: "/ws/live/:path*",
+        destination: "http://127.0.0.1:3000/ws/live/:path*",
+      },
+    ];
   },
 };
 
