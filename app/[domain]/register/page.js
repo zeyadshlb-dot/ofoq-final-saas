@@ -46,7 +46,7 @@ export default async function RegisterPage({ params }) {
   let stages = [];
   try {
     const res = await fetch(
-      `http://127.0.0.1:3001/api/v1/stages?slug=${domain}`,
+      `https://api.ofoq.site/api/v1/stages?slug=${domain}`,
       {
         cache: "no-store",
       },
