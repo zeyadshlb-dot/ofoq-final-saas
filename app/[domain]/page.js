@@ -8,7 +8,7 @@ import YearsSection from "./components/landing/YearsSection";
 async function getStages(slug) {
   try {
     const res = await fetch(
-      `http://127.0.0.1:3001/api/v1/stages?slug=${slug}`,
+      `https://api.ofoq.site/api/v1/stages?slug=${slug}`,
       { cache: "no-store" }, // Bypass cache to get fresh DB data
     );
     if (!res.ok) return [];
@@ -23,7 +23,7 @@ async function getStages(slug) {
 async function getStageCourses(slug, stageId) {
   try {
     const res = await fetch(
-      `http://127.0.0.1:3001/api/v1/courses?slug=${slug}&educational_stage_id=${stageId}&status=active`,
+      `https://api.ofoq.site/api/v1/courses?slug=${slug}&educational_stage_id=${stageId}&status=active`,
       { cache: "no-store" },
     );
     if (!res.ok) return [];
@@ -91,7 +91,7 @@ export default async function Page({ params }) {
   if (token) {
     try {
       const res = await fetch(
-        `http://127.0.0.1:3001/api/v1/student/me?slug=${domain}`,
+        `https://api.ofoq.site/api/v1/student/me?slug=${domain}`,
         {
           headers: { Authorization: `Bearer ${token}` },
           cache: "no-store",
