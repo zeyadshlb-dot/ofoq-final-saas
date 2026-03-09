@@ -33,7 +33,7 @@ export default async function sitemap({ params }) {
   let stageSitemaps = [];
   try {
     const stagesRes = await fetch(
-      `http://127.0.0.1:3001/api/v1/stages?slug=${domain}`,
+      `https://api.ofoq.site/api/v1/stages?slug=${domain}`,
       { cache: "no-store" },
     );
     if (stagesRes.ok) {
@@ -58,7 +58,7 @@ export default async function sitemap({ params }) {
   let courseSitemaps = [];
   try {
     const coursesRes = await fetch(
-      `http://127.0.0.1:3001/api/v1/courses?slug=${domain}&status=active`,
+      `https://api.ofoq.site/api/v1/courses?slug=${domain}&status=active`,
       { cache: "no-store" },
     );
     if (coursesRes.ok) {
