@@ -1,0 +1,38 @@
+{
+  "name": "أفق — المنصة التعليمية",
+  "short_name": "أفق",
+  "description": "المنصة التعليمية الأولى للطلاب والمدرسين في مصر",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a0b10",
+  "theme_color": "#f43f5e",
+  "orientation": "portrait",
+  "dir": "rtl",
+  "lang": "ar",
+  "categories": ["education"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+ 
+    {
+      "name": "بانل الطالب",
+      "url": "/panel",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

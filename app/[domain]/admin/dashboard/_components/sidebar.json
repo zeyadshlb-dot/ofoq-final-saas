@@ -1,0 +1,135 @@
+[
+  {
+    "category": "لوحة المعلومات",
+    "links": [
+      {
+        "id": "home",
+        "label": "الرئيسية",
+        "href": "/dashboard",
+        "icon": "Home"
+      },
+      {
+        "id": "analytics-heatmap",
+        "label": "الخريطة الحرارية",
+        "href": "/dashboard/analytics/heatmap",
+        "icon": "Flame"
+      },
+      {
+        "id": "reports",
+        "label": "التقارير المتقدمة",
+        "href": "/dashboard/reports",
+        "icon": "BarChart3"
+      }
+    ]
+  },
+  {
+    "category": "إدارة الطلاب والمحتوى",
+    "links": [
+      {
+        "id": "students",
+        "label": "الطلاب",
+        "href": "/dashboard/students",
+        "icon": "Users"
+      },
+      {
+        "id": "attendance",
+        "label": "الغياب والحضور",
+        "href": "/dashboard/attendance",
+        "icon": "CalendarCheck"
+      },
+      {
+        "id": "assignments",
+        "label": "الواجبات التعليمية",
+        "href": "/dashboard/assignments",
+        "icon": "FileEdit"
+      },
+      {
+        "id": "stages",
+        "label": "المراحل الدراسية",
+        "href": "/dashboard/stages",
+        "icon": "GraduationCap"
+      },
+      {
+        "id": "courses",
+        "label": "الكورسات",
+        "href": "/dashboard/courses",
+        "icon": "BookOpen"
+      }
+    ]
+  },
+  {
+    "category": "الأدوات الذكية والحيّة",
+    "links": [
+      {
+        "id": "live",
+        "label": "البث المباشر",
+        "href": "/dashboard/live",
+        "icon": "Radio",
+        "badge": "LIVE"
+      },
+      {
+        "id": "ai-chat",
+        "label": "المساعد الذكي (AI)",
+        "href": "/dashboard/ai-chat",
+        "icon": "Sparkles"
+      }
+    ]
+  },
+  {
+    "category": "المحافظ المالية",
+    "links": [
+      {
+        "id": "video-wallet",
+        "label": "محفظة الفيديوهات",
+        "href": "/dashboard/wallet/video",
+        "icon": "Video"
+      },
+      {
+        "id": "live-wallet",
+        "label": "محفظة البث المباشر",
+        "href": "/dashboard/wallet/live",
+        "icon": "Zap"
+      },
+      {
+        "id": "ai-wallet",
+        "label": "محفظة الـ AI",
+        "href": "/dashboard/wallet/ai",
+        "icon": "Wallet"
+      }
+    ]
+  },
+  {
+    "category": "النظام والمالية",
+    "links": [
+      {
+        "id": "vouchers",
+        "label": "أكواد الشحن",
+        "href": "/dashboard/vouchers",
+        "icon": "Ticket"
+      },
+      {
+        "id": "payments",
+        "label": "بوابات الدفع",
+        "href": "/dashboard/payments",
+        "icon": "CreditCard"
+      },
+      {
+        "id": "whatsapp",
+        "label": "ربط الواتساب",
+        "href": "/dashboard/whatsapp",
+        "icon": "MessageCircle"
+      }
+    ]
+  },
+  {
+    "category": "الإعدادات العامة",
+    "links": [
+      {
+        "id": "settings",
+        "label": "الإعدادات",
+        "href": "/dashboard/settings",
+        "icon": "Settings"
+      }
+    ]
+  }
+]
