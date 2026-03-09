@@ -10,7 +10,7 @@ export const config = {
      * - favicon.ico, sitemap.xml, robots.txt, sw.js, manifest.json (metadata files)
      * - public/storage (backend proxy files)
      */
-    "/((?!api|public\\/storage|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|sw\\.js|manifest\\.webmanifest).*)",
+    "/((?!api|public\\/storage|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|sw\\.js|manifest\\.json|offline\\.html).*)",
   ],
 };
 
@@ -32,18 +32,22 @@ export default function middleware(req) {
     // Default to 'alwody' for local network testing via IP
     rawSubdomain = "alwody";
   } else if (hostWithoutPort === "localhost") {
-    rawSubdomain = null;
+    rawSubdomain = "main"; // Use 'main' as default for localhost root
   } else {
     // Production Domain Handling
     const parts = hostWithoutPort.split(".");
-    // e.g. alwody.domain.com
+
+    // If we have a subdomain (e.g. tenant.ofoq.info or www.ofoq.info)
     if (parts.length >= 3) {
-      rawSubdomain = parts[0];
-      if (rawSubdomain === "www") {
-        rawSubdomain = null;
+      const subdomain = parts[0];
+      if (subdomain === "www") {
+        rawSubdomain = "main"; // Use 'main' for the root domain (www)
+      } else {
+        rawSubdomain = subdomain;
       }
     } else {
-      rawSubdomain = null;
+      // If we are at the root domain (e.g. ofoq.info), default to 'main'
+      rawSubdomain = "main";
     }
   }
 
