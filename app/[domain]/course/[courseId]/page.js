@@ -7,7 +7,7 @@ import { cookies } from "next/headers";
 async function getCourseDetails(courseId) {
   try {
     const res = await fetch(
-      `http://127.0.0.1:3001/api/v1/courses/${courseId}`,
+      `https://api.ofoq.site/api/v1/courses/${courseId}`,
       { cache: "no-store" },
     );
     if (!res.ok) return null;
@@ -81,7 +81,7 @@ export default async function CoursePage({ params }) {
   if (token) {
     try {
       const studentRes = await fetch(
-        `http://127.0.0.1:3001/api/v1/student/me?slug=${domain}`,
+        `https://api.ofoq.site/api/v1/student/me?slug=${domain}`,
         {
           headers: { Authorization: `Bearer ${token}` },
           cache: "no-store",
