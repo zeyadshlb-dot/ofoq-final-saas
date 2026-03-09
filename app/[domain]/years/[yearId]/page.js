@@ -6,7 +6,7 @@ import Link from "next/link";
 async function getStageDetails(slug, stageId) {
   try {
     const res = await fetch(
-      `http://127.0.0.1:3001/api/v1/stages?slug=${slug}`,
+      `https://api.ofoq.site/api/v1/stages?slug=${slug}`,
       { cache: "no-store" },
     );
     if (!res.ok) return null;
@@ -22,7 +22,7 @@ async function getStageDetails(slug, stageId) {
 async function getStageCourses(slug, stageId) {
   try {
     const res = await fetch(
-      `http://127.0.0.1:3001/api/v1/courses?slug=${slug}&educational_stage_id=${stageId}&status=active`,
+      `https://api.ofoq.site/api/v1/courses?slug=${slug}&educational_stage_id=${stageId}&status=active`,
       { cache: "no-store" },
     );
     if (!res.ok) return [];
